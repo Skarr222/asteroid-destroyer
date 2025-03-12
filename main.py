@@ -7,6 +7,7 @@ from constants import (
     ASTEROID_SPAWN_RATE,
     ASTEROID_MAX_RADIUS,
     PLAYER_RADIUS,
+    PLAYER_TURN_SPEED,
 )
 from player import Player
 
@@ -21,10 +22,11 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        dt = clock.tick(60) / 1000  # Now this works correctly
         screen.fill((0, 0, 1))
         player.draw(screen)
         pygame.display.flip()
+        player.update(dt)
+        dt = clock.tick(60) / 1000  # Now this works correctly
 
 
 if __name__ == "__main__":
