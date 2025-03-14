@@ -19,7 +19,7 @@ class Player(CircleShape):
         return [a, b, c]
 
     def draw(self, screen):
-        return pygame.draw.polygon(screen, "white", self.triangle(), 2)
+        pygame.draw.polygon(screen, "white", self.triangle(), 2)  # type: ignore
 
     def update(self, dt):
         keys = pygame.key.get_pressed()
